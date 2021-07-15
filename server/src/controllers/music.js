@@ -13,7 +13,7 @@ exports.musics = async (req, res) => {
             attributes: {
                 exclude: ['createdAt']
             },
-            order: [["createdAt", "DESC"]],
+            order: [['createdAt', 'DESC']],
         })
 
         res.send({
@@ -47,8 +47,8 @@ exports.addMusic = async (req, res) => {
         await music.create(dataUpload)
 
         res.send({
-            status: "success",
-            message: "Upload product data success"
+            status: 'success',
+            message: 'Upload product data success'
         })
 
     } catch (error) {

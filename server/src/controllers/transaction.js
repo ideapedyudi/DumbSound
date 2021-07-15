@@ -13,8 +13,8 @@ exports.addTransaction = async (req, res) => {
         await transaction.create(dataUpload)
 
         res.send({
-            status: "success",
-            message: "Upload product data success"
+            status: 'success',
+            message: 'Upload product data success'
         })
 
     } catch (error) {
@@ -77,7 +77,7 @@ exports.getTrans = async (req, res) => {
             attributes: {
                 exclude: ['createdAt', 'updatedAt']
             },
-            order: [["createdAt", "DESC"]],
+            order: [['createdAt', 'DESC']],
         })
 
         res.send({
