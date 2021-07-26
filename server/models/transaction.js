@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     dueDate: DataTypes.DATE,
     userId: DataTypes.INTEGER,
     attache: DataTypes.STRING,
-    status: DataTypes.STRING
+    status: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'transaction',

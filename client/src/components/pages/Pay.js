@@ -57,6 +57,8 @@ export default function Pay() {
         }
     }
 
+    console.log(userTrnas)
+
     // klik logout
     const handleLogout = () => {
         dispatch({
@@ -184,9 +186,9 @@ export default function Pay() {
         }
     }
 
-    setTimeout(() => {
-        loadUserTrans()
-    }, 10000);
+    // setTimeout(() => {
+    //     loadUserTrans()
+    // }, 10000);
 
     useEffect(() => {
         loadUser()

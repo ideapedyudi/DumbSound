@@ -43,6 +43,12 @@ h4 {
     box-shadow: none !important;
 }
 
+.iconLike {
+    margin-top: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
 .logName {
     margin-top: -1px;
     font-size: 12px;
@@ -115,7 +121,7 @@ h4 {
 .cardThumb {
     border: 7px solid #3A3A3A !important;
     background-color: #3A3A3A !important;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .cardThumb:hover {
@@ -143,6 +149,7 @@ h4 {
     height: 100% !important;
     width: 100% !important;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .boCardImage {

@@ -133,3 +133,14 @@ td {
     font-size: 25px;
     margin-top: -10px;
 }
+
+.btn-tbl {
+    margin-left: 73%;
+    margin-top: -20px;
+    position: absolute;
+}
+
+.btn-tbl:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

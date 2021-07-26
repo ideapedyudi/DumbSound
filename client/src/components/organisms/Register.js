@@ -31,14 +31,14 @@ export default function Register(props) {
         fullName: '',
         email: '',
         password: '',
-        level: '0',
+        level: '',
         gender: '',
         phone: '',
         address: '',
         image: 'profile.jpg',
     })
 
-    const { fullName, email, password, gender, phone, address } = form
+    const { fullName, email, password, gender, phone, address, level } = form
 
     // name dan value form sama
     const handleOnChange = (e) => {
@@ -139,11 +139,12 @@ export default function Register(props) {
 
                             <Form.Control className="mt-3 inputLogin genderOption" type="text" onChange={handleOnChange} value={gender} name="gender" as="select">
                                 <option value="" selected disabled>Gender</option>
-                                <option name="gender">Pria</option>
-                                <option name="gender">Wanita</option>
+                                <option name="gender">male</option>
+                                <option name="gender">female</option>
                             </Form.Control>
 
                             <Form.Control className="mt-3 inputLogin" type="text" onChange={handleOnChange} value={phone} name="phone" placeholder="Phone" required autoComplete="off" />
+                            <Form.Control className="mt-3 inputLogin" type="text" onChange={handleOnChange} value={level} name="level" placeholder="Level" required autoComplete="off" />
                             {/* <Form.Control className="mt-3 inputLogin" type="text" onChange={handleOnChange} value={address} name="address" placeholder="Address" required /> */}
                             <Form.Control className="mt-3 inputLogin" type="text" onChange={handleOnChange} value={address} name="address" placeholder="Address" required as="textarea" rows={3} />
                         </Form.Group>

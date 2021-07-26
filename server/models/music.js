@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     year: DataTypes.STRING,
     thumbnail: DataTypes.STRING,
     attache: DataTypes.STRING,
-    idArtis: DataTypes.INTEGER
+    idArtis: DataTypes.INTEGER,
+    like: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'music',

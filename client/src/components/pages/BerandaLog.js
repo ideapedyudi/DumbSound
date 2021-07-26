@@ -15,7 +15,7 @@ import '../styles/Berandano.css';
 
 // ------------- fontawesome -----------
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt, faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faMoneyCheckAlt, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 // ---------=----- Aos -----------------
 import Aos from "aos";
@@ -27,6 +27,7 @@ import { Link } from "react-router-dom";
 // ----------- components --------------
 import PlayerMusic from '../organisms/PlayerMusic';
 import Logo from '../assets/logo.png';
+import MusicApproved from "../organisms/MusicApproved";
 
 // ----------- function ----------------
 import { UserContext } from "../contexts/UserContext";
@@ -45,6 +46,7 @@ export default function BerandaLog() {
     const [user, setUser] = useState({})
     const [userTrnas, setUserTrans] = useState({})
 
+    // load user
     const loadUser = async () => {
         try {
             const response = await API.get(`user/${state.user.id}`)
@@ -54,6 +56,7 @@ export default function BerandaLog() {
         }
     }
 
+    // load transaksion
     const loadUserTrans = async () => {
         try {
             const response = await API.get(`userTrans/${state.user.id}`)
@@ -63,7 +66,6 @@ export default function BerandaLog() {
         }
     }
 
-    console.log(user.email)
 
     // load Feed
     const loadMusic = async () => {
@@ -93,6 +95,11 @@ export default function BerandaLog() {
         </div>
     );
 
+    // Load data ketika pertama kali
+    useEffect(() => {
+        loadMusic()
+    }, [])
+
     useEffect(() => {
         loadUser()
     }, [])
@@ -101,10 +108,6 @@ export default function BerandaLog() {
         loadUserTrans()
     }, [])
 
-    // Load data ketika pertama kali
-    useEffect(() => {
-        loadMusic()
-    }, [])
 
     // aos duration
     useEffect(() => {
@@ -188,22 +191,12 @@ export default function BerandaLog() {
 
                                 <Row>
                                     {musics?.map((msc, index) => (
-                                        <Col lg="2" md="4" sm="6" className="mt-3" onClick={() => setMusicId(msc)}>
+                                        <Col lg="2" md="4" sm="6" className="mt-3">
                                             <Card className="cardThumb">
-                                                <div class="boxthumb">
+                                                <div class="boxthumb" onClick={() => setMusicId(msc)}>
                                                     <Card.Img className="imageThumb" variant="top" src={path + msc.thumbnail} />
                                                 </div>
-                                                <Card.Body className="cardBody">
-                                                    <Card.Title className="titleCard">
-                                                        <div className="boxTitle">
-                                                            <p className="artis">{(msc.title.length > 12) ? msc.title.substring(0, 12) + '...' : msc.title}</p>
-                                                        </div>
-                                                        <p className="year">{msc.year}</p>
-                                                    </Card.Title>
-                                                    <Card.Text className="textThumb">
-                                                        {msc.artis.name}
-                                                    </Card.Text>
-                                                </Card.Body>
+                                                <MusicApproved msc={msc} loadMusic={loadMusic} setMusics={setMusics} />
                                             </Card>
                                         </Col>
                                     ))}

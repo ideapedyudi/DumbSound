@@ -29,6 +29,9 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE"
       },
+      like: {
+        type: Sequelize.INTEGER,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

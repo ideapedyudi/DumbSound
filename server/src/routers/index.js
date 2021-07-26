@@ -70,5 +70,24 @@ router.get('/transaction/:id', getTran)
 router.delete('/transaction/:id', deleteTrans)
 
 
+// ----------------------------- hidtory -----------------------------------
+const { historys, getHistory } = require('../controllers/history')
+
+// router menampikan data
+router.post('/history', historys)
+
+// get transactions hostory
+router.get('/history/:id', getHistory)
+
+
+// ----------------------------- like -----------------------------------
+const { likeById, likelike } = require('../controllers/like')
+
+// router like
+router.post('/like', auth, likelike)
+
+// router like parameter
+router.get('/like/:id', likeById)
+
 // penutup router
 module.exports = router

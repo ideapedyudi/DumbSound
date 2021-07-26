@@ -14,7 +14,7 @@ exports.addTransaction = async (req, res) => {
 
         res.send({
             status: 'success',
-            message: 'Upload product data success'
+            message: 'Upload historytransaction data success'
         })
 
     } catch (error) {
@@ -77,7 +77,7 @@ exports.getTrans = async (req, res) => {
             attributes: {
                 exclude: ['createdAt', 'updatedAt']
             },
-            order: [['createdAt', 'DESC']],
+            order: [['id', 'DESC']],
         })
 
         res.send({

@@ -174,15 +174,15 @@ export default function ListTrans() {
         </div>
     );
 
-    
+
     useEffect(() => {
         loadTransaction()
     }, [])
-    
+
     useEffect(() => {
         loadUser()
     }, [])
-    
+
     useEffect(() => {
         loadStartDate()
     }, [])
@@ -245,7 +245,7 @@ export default function ListTrans() {
                                     </td>
                                     <td>
                                         <p>
-                                            <Remaining dueDate={dueDate[index]} status={transaction.status} byId={transaction.id} DateAwal={transaction.startDate} loadTransaction={loadTransaction} />
+                                            <Remaining transaction={transaction} dueDate={dueDate[index]} status={transaction.status} userId={transaction.userId} attache={transaction.attache} byId={transaction.id} DateAwal={transaction.startDate} loadTransaction={loadTransaction} />
                                         </p>
                                     </td>
                                     <td>
