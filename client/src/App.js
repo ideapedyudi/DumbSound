@@ -29,9 +29,9 @@ function App() {
   // ketika reload jika masih login
   useEffect(() => {
     console.log(levels)
-    if (state.isLogin == false) {
+    if (state.isLogin === false) {
       router.push('/auth')
-    } else if (state.isLogin == true && levels == "1") {
+    } else if (state.isLogin === true && levels === "1") {
       router.push('/ListTrans')
     } else {
       router.push('/')

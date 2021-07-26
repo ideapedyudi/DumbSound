@@ -3,23 +3,22 @@ import React from 'react';
 import { useEffect, useState, useContext } from "react";
 
 // -------------------- bootstrap ------------------------
-import { Container, Navbar, Button, Jumbotron, Row, Col, Card, Form, Table } from 'react-bootstrap';
+import { Container, Navbar, Button, Form } from 'react-bootstrap';
 
 // -------------------- ant -------------------------
-import { Popover, message, Space } from 'antd';
+import { Popover, message } from 'antd';
 
 // ---------------- avatar --------------
 import Avatar from 'react-avatar';
 
 // ------------- fontawesome -----------
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt, faHome, faPaperclip, faCreditCard, handleLogout, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faPaperclip, faCreditCard, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 // -------- router -------------
 import { Link } from "react-router-dom";
 
 // ----------------- components ----------------------
-import Song1 from '../assets/Rectangle 4.png';
 import Logo from '../assets/logo.png';
 
 // -------------------- styles ------------------------------

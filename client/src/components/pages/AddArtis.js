@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect, useState, useContext } from "react";
 
 // ---------------------- bootrtrap --------------------------
-import { Container, Navbar, Button, Jumbotron, Row, Col, Card, Form, Table } from 'react-bootstrap';
+import { Container, Navbar, Button, Form } from 'react-bootstrap';
 
 // ------------------------ ant -------------------------------
 import { Popover, message, Space } from 'antd';
@@ -19,7 +19,6 @@ import { faSignInAlt, faMusic, faCreditCard } from '@fortawesome/free-solid-svg-
 import { Link } from "react-router-dom";
 
 // --------------- components --------------
-import Song1 from '../assets/Rectangle 4.png';
 import Logo from '../assets/logo.png';
 
 // ----------------- styles ----------------------
